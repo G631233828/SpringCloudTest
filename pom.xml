@@ -20,6 +20,7 @@
 		<logback-core.version>1.2.3</logback-core.version>
 		<spring.boot.version>1.5.9.RELEASE</spring.boot.version>
 		<springloaded.version>1.2.8.RELEASE</springloaded.version>
+		<spring.eureka.version>1.4.6.RELEASE</spring.eureka.version>
 	</properties>
 
 
@@ -32,6 +33,13 @@
 				<version>Dalston.SR1</version>
 				<type>pom</type>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-eureka-server -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-eureka-server</artifactId>
+				<version>${spring.eureka.version}</version>
+			</dependency>
+
 			<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -126,5 +134,6 @@
 	<modules>
 		<module>SpringCloudProvider-dept-8081</module>
 		<module>SpringCloudConsumer-dept-80</module>
+		<module>SpringCloudEureka-7001</module>
 	</modules>
 </project>
