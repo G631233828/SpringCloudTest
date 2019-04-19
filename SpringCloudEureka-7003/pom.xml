@@ -6,8 +6,8 @@
 		<artifactId>SpringCloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>SpringCloudEureka-7001</artifactId>
-	<description>7001注册中心</description>
+	<artifactId>SpringCloudEureka-7003</artifactId>
+
 
 	<dependencies>
 		<!-- eureka -server服务端 -->
@@ -27,5 +27,4 @@
 
 
 	</dependencies>
-
 </project>
