@@ -44,6 +44,18 @@
 				<artifactId>spring-cloud-starter-eureka</artifactId>
 				<version>${spring.cloud.version}</version>
 			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-hystrix -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-hystrix</artifactId>
+				<version>${spring.cloud.version}</version>
+			</dependency>
+			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-feign -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-starter-feign</artifactId>
+				<version>${spring.cloud.version}</version>
+			</dependency>
 			<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-ribbon -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -197,5 +209,7 @@
 		<module>SpringCloudEureka-7003</module>
 		<module>SpringCloudProvider-dept-8082</module>
 		<module>SpringCloudProvider-dept-8083</module>
+		<module>SpringCloudConsumer-dept-feign</module>
+		<module>SpringCloudProvider-dept-hystrix-8081</module>
 	</modules>
 </project>
