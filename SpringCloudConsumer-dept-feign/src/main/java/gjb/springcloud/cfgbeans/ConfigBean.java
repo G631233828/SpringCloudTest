@@ -3,14 +3,35 @@ package gjb.springcloud.cfgbeans;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RetryRule;
 
+import feign.Feign;
+
 @Configuration
 public class ConfigBean {
 
+	
+	/**
+	 * 解决在yml中配置 feign.hystrix.enabled=true 不生肖的问题
+	 * @return
+	 */
+//	@Bean
+//	@Scope("prototype")
+//	public Feign.Builder feignHystrixBuilder(){
+//		return Feign.builder();
+//	}
+//	
+	
+	
+	
+	
+	
+	
+	
 	/**
 	 * 使用restTemplate访问restful接口非常的简单
 	 * （url,requestMap,ResponseBean.class）这三个参数分别代表了REST请求地址，请求参数，Http响应转换被转换的对象类型

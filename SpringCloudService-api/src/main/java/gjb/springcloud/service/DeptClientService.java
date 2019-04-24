@@ -9,7 +9,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import gjb.springcloud.entities.Dept;
 
-@FeignClient(value = "SPRINGCLOUD-DEPT")
+/**
+ * 
+ * @author fliay 修改api 根据已经有的DeptClientService接口新建实现
+ *         实现FallbackFactory接口的类DeptClientServiceFallbackFactory
+ *         将所有的需要进行熔断的交给了DeptClientServiceFallbackFactory来进行处理
+ *
+ *
+ */
+
+//@FeignClient(value = "SPRINGCLOUD-DEPT")// 未使用熔断hystrix使用这个
+@FeignClient(value = "SPRINGCLOUD-DEPT", fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
 
 	@RequestMapping(value = "/dept/add", method = RequestMethod.POST)

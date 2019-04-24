@@ -26,7 +26,6 @@ public class DeptController {
 	private DiscoveryClient client;// 服务发现
 
 	@RequestMapping(value = "/dept/add", method = RequestMethod.POST)
-	@HystrixCommand(fallbackMethod = "processHystrix_add")
 	public boolean add(@RequestBody Dept dept) {
 		return deptService.addDept(dept);
 	}
@@ -38,7 +37,7 @@ public class DeptController {
 	 * @return
 	 */
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
-	@HystrixCommand(fallbackMethod = "processHystrix_get") 
+//	@HystrixCommand(fallbackMethod = "processHystrix_get") 
 	public Dept get(@PathVariable("id") Long id) {
 		Dept dept = deptService.findById(id);
 		if (null == dept) {
@@ -46,11 +45,11 @@ public class DeptController {
 		}
 		return dept;
 	}
-	public Dept processHystrix_get(@PathVariable("id") Long id) {
-		
-		
-		return new Dept().setDeptno(id).setDbname("无法找到ID："+id+",所对应的数据").setDb_source("no database in MySql");
-	}
+//	public Dept processHystrix_get(@PathVariable("id") Long id) {
+//		
+//		
+//		return new Dept().setDeptno(id).setDbname("无法找到ID："+id+",所对应的数据").setDb_source("no database in MySql");
+//	}
 	
 	
 	
